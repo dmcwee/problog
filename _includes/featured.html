@@ -9,12 +9,13 @@
             <h6 class="card-subtitle text-body-secondary">
                 {{ post.date | date: "%b %d, %y"}}
                 {% for category in post.categories %}
-                | <a href="/categories/{{ category | downcase }}">{{ category }}</a>
+                {% capture catUrl %}/categories/{{category | downcase}}{% endcapture %}
+                | <a href="{{ catUrl | relative_url }}">{{ category }}</a>
                 {% endfor %}
             </h6>
             <h5 class="card-title">{{ post.title }}</h5>
             <p class="card-text">{{ post.excerpt | strip_html  }}</p>
-            <a href="{{ post.url }}" class="link-secondary card-link">Read more...</a>
+            <a href="{{ post.url | relative_url }}" class="link-secondary card-link">Read more...</a>
         </div>
     </div>
     {% endfor %}

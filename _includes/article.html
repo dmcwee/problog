@@ -3,5 +3,5 @@
 
     {%- include by-line.html post=include.post share=false -%}
     <div class="excerpt">{{ include.post.excerpt }}</div>
-    <p><a class="link-secondary" href="{{include.post.url}}">Read more...</a></p>
+    <p><a class="link-secondary" href="{{include.post.url | relative_url}}">Read more...</a></p>
 </article>
