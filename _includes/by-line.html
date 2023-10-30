@@ -1,0 +1,22 @@
+<div class="row flex-nowrap justify-content-between align-items-center mt-2 mb-2 blog-by-line">
+    <div class="col align-items-center">
+      {{ include.post.date | date: "%a %b %d, %y" }}
+      {% if include.post.last_update %}
+      | <span class="blog-by-line-update">Updated: {{ include.post.last_update | date: "%a %b %d, %y"}} </span>
+      {% endif %}
+      {% for category in include.post.categories %}
+      | <a class="link-secondary" href="/categories/{{ category }}">{{ category }}</a>
+      {% endfor %}
+      </div>
+      {% if include.share, true %}
+      <div class="col-sm-2 d-flex justify-content-end align-items-center">
+        <b>Share:</b>
+        {% assign shareSites = site.data.socialmedia | where: "supportShare", true %}
+        {% for sm in shareSites %}
+        <a class="link-secondary p-1" href="{{ sm.url }}">
+            <i class="bi {{sm.iconclass}}"></i>
+        </a>
+        {% endfor %}
+      </div>
+      {% endif %}
+  </div>

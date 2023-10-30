@@ -1,0 +1,28 @@
+<div class="blog-header-outer" data-bs-theme="{{ site.nav-bs-theme }}">
+    <div class="blog-header-container container">
+        <div class="blog-header-row row flex-nowrap justify-content-between align-items-center pt-2 pb-2">
+            <div class="col align-items-center">
+                <a class="blog-header-logo text-body-emphasis text-decoration-none h1" href="/">{{ site.title }}</a>
+            </div>
+            <div class="col d-flex justify-content-end align-items-center">
+                {% for sm in site.data.socialmedia %}
+                <a class="link-secondary p-1" href="{{ sm.url }}">
+                    <i class="bi {{sm.iconclass}}"></i>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <nav class="blog-navbar navbar navbar-expand-md nav-underline">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#blognavbar" aria-controls="blognavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse" id="blognavbar">
+                <div class="blog-navbar-nav navbar-nav col justify-content-between">
+                    {% for navlink in site.data.navigation %}
+                    <a class="nav-item nav-link" href="{{ navlink.link }}">{{ navlink.name }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>

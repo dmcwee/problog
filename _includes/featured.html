@@ -1,0 +1,21 @@
+<div class="blog-featured row row-col-4">
+    {% assign featuredPost = site.posts | where: "featured", "true" %}
+    {% for post in featuredPost %}
+    <div class="card col-sm">
+        {% if post.image %}
+        <img src="{{ post.image | relative_url }}" class="card-img-top" alt="post image">
+        {% endif %}
+        <div class="card-body">
+            <h6 class="card-subtitle text-body-secondary">
+                {{ post.date | date: "%b %d, %y"}}
+                {% for category in post.categories %}
+                | <a href="/categories/{{ category | downcase }}">{{ category }}</a>
+                {% endfor %}
+            </h6>
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">{{ post.excerpt | strip_html  }}</p>
+            <a href="{{ post.url }}" class="link-secondary card-link">Read more...</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>

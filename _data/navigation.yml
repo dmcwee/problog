@@ -1,0 +1,19 @@
+# This file stores the navigation text and links for the site. These items are used to
+# create the navigation links in the site's banner.
+#
+# Only one level of navigation is supported currently.
+
+- name: Page
+  link: /page.html
+- name: Post 1
+  link: /2023/01/01/example-post-light
+- name: Post 2
+  link: /2023/01/02/example-post-dark
+- name: Data 2
+  link: #
+- name: Data 3
+  link: #
+- name: About
+  link: /about
+- name: README
+  link: /README

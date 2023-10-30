@@ -1,0 +1,7 @@
+<article class="blog-article my-3">
+    <h3>{{ include.post.title }}</h3>
+
+    {%- include by-line.html post=include.post share=false -%}
+    <div class="excerpt">{{ include.post.excerpt }}</div>
+    <p><a class="link-secondary" href="{{include.post.url}}">Read more...</a></p>
+</article>

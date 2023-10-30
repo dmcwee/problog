@@ -1,0 +1,17 @@
+{% if page.series %}
+    <div class="row">
+        <div class="col-12">
+            <h4>Related Posts:</h4>
+        </div>
+        {% assign seriesPosts = site.posts | where:"series",page.series | sort: "date" %}
+        <ul>
+        {% for seriesPost in seriesPosts %}
+            <li>
+                <a href="{{ seriesPost.url }}">{{ seriesPost.title }}</a>
+                <br>
+                ({{ seriesPost.date | date: "%a, %b %d, %y"}})
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endif %}

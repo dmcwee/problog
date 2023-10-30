@@ -1,0 +1,29 @@
+@import "basics";
+
+.blog {
+    margin-bottom: 2rem;
+    color: var(--bs-body-color);
+
+    
+    &-by-line {
+        border-top: 1px solid var(--bs-primary-border-subtle);
+        border-bottom: 1px solid var(--bs-primary-border-subtle);
+    }
+
+    &-post {
+        &-header {
+            &-image {
+                background-repeat: no-repeat;
+                min-height: 250px; 
+                background-position: 0px -150px;
+            }
+        }
+    }
+
+    &-featured {
+        .card {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+        }
+    }
+}

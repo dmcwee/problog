@@ -1,0 +1,25 @@
+@import "lightTheme";
+@import "darkTheme";
+
+table {
+    width: 100%;
+    border: solid 1px var(--bs-primary-border-subtle);
+
+    tbody > tr:nth-of-type(even) > * {
+        background-color: var(--bs-dark-bg-subtle);
+        color: var(--bs-secondary-color);
+
+        a {
+            color: var(--bs-link-color);
+        }
+    }
+
+    tbody > tr:nth-of-type(even) > * > a {
+        color: var(--bs-link-color);
+    }
+
+    thead > tr {
+        background-color: var(--bs-dark-bg-subtle);
+        color: var(--bs-body-color);
+    }
+}

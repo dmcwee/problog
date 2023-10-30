@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {%- include head.html -%}
+  </head>
+  <body class="blog" data-bs-theme="{{ site.bs-theme }}">
+    {%- include navigation.html -%}
+
+    <main class="container blog">
+      {{ content }}
+    </main>
+
+    {%- include scripts.html -%}
+  </body>
+</html>
