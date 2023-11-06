@@ -1,6 +1,6 @@
 <div class="blog-featured row row-col-4">
-    {% assign featuredPost = site.posts | where: "featured", "true" %}
-    {% for post in featuredPost %}
+    
+    {% for post in include.featuredPosts %}
     <div class="card col-sm">
         {% if post.image %}
         <img src="{{ post.image | relative_url }}" class="card-img-top" alt="post image">
@@ -10,13 +10,13 @@
                 {{ post.date | date: "%b %d, %y"}}
                 {% for category in post.categories %}
                 {% capture catUrl %}/categories/{{category | downcase}}{% endcapture %}
-                | <a href="{{ catUrl | relative_url }}">{{ category }}</a>
+                | <a class="link-secondary" href="{{ catUrl | relative_url }}">{{ category }}</a>
                 {% endfor %}
             </h6>
             <h5 class="card-title">{{ post.title }}</h5>
             <p class="card-text">{{ post.excerpt | strip_html  }}</p>
-            <a href="{{ post.url | relative_url }}" class="link-secondary card-link">Read more...</a>
         </div>
+        <a href="{{ post.url | relative_url }}" class="link-secondary card-footer card-link">Read more...</a>
     </div>
     {% endfor %}
 </div>
