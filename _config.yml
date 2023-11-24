@@ -24,11 +24,11 @@ domain: ""
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 google_analytics: ""
 bs-theme: "light"
-nav-bs-theme: "light"
+nav-bs-theme: "dark"
 image: ""
 
 # Build settings
-# markdown: kramdown
+markdown: kramdown
 # highlighter: rouge
 # show_excerpts: true
 # permalink: /:year/:month/:day/:title/

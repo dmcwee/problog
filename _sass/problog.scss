@@ -3,11 +3,30 @@
 .blog {
     margin-bottom: 2rem;
     color: var(--bs-body-color);
-
     
     &-by-line {
-        border-top: 1px solid var(--bs-primary-border-subtle);
-        border-bottom: 1px solid var(--bs-primary-border-subtle);
+        border-top: 1px solid var(--bs-dark-bg-subtle);
+        border-bottom: 1px solid var(--bs-dark-bg-subtle);
+    }
+
+    &-featured {
+        .card {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+
+                &-body {
+                    max-height: 250px;
+                    overflow-y: hidden;
+                }
+        }
+    }
+
+    &-header-outer {
+        background-color: var(--bs-body-bg);
+    }
+
+    &-main {
+        padding-top: 5px;
     }
 
     &-post {
@@ -18,12 +37,9 @@
                 background-position: 0px -150px;
             }
         }
-    }
 
-    &-featured {
-        .card {
-                padding-left: 0 !important;
-                padding-right: 0 !important;
+        &-title {
+            background-color: var(--bs-body-bg);
         }
     }
 }

@@ -3,7 +3,9 @@
 
 table {
     width: 100%;
-    border: solid 1px var(--bs-primary-border-subtle);
+    //border: solid 1px var(--bs-primary-border-subtle);
+    border: solid 1px var(--bs-dark-bg-subtle);
+    margin-bottom: 5px;
 
     tbody > tr:nth-of-type(even) > * {
         background-color: var(--bs-dark-bg-subtle);
