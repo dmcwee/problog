@@ -13,7 +13,7 @@
         <b>Share:</b>
         {% assign shareSites = site.data.socialmedia | where: "supportShare", true %}
         {% for sm in shareSites %}
-        <a class="link-secondary p-1" href="{{ sm.shareurl }}">
+        <a class="link-secondary p-1" href="{{ sm.shareurl }}{{site.url | url_encode}}{{page.url | url_encode}}">
             <i class="bi {{sm.iconclass}}"></i>
         </a>
         {% endfor %}
