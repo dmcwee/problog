@@ -5,15 +5,20 @@
 
 - name: Page
   link: /page.html
+  relative: true
 - name: Post 1
   link: /2023/01/01/example-post-light
+  relative: true
 - name: Post 2
   link: /2023/01/02/example-post-dark
+  relative: true
 - name: Data 2
   link: #
 - name: Data 3
   link: #
 - name: About
   link: /about
+  relative: true
 - name: README
   link: /README
+  relative: true

@@ -19,6 +19,9 @@
             <div class="collapse navbar-collapse" id="blognavbar">
                 <div class="blog-navbar-nav navbar-nav col justify-content-between">
                     {% for navlink in site.data.navigation %}
+                    {% if navlink.relative %}
+                    <a class="nav-item nav-link" href="{{ navlink.link  | relative_url}}">{{ navlink.name }}</a>
+                    {% else %}
                     <a class="nav-item nav-link" href="{{ navlink.link }}">{{ navlink.name }}</a>
                     {% endfor %}
                 </div>
