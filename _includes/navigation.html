@@ -23,6 +23,7 @@
                     <a class="nav-item nav-link" href="{{ navlink.link  | relative_url}}">{{ navlink.name }}</a>
                     {% else %}
                     <a class="nav-item nav-link" href="{{ navlink.link }}">{{ navlink.name }}</a>
+                    {% endif %}
                     {% endfor %}
                 </div>
             </div>
