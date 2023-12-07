@@ -29,9 +29,9 @@ image: ""
 
 # Build settings
 markdown: kramdown
-# highlighter: rouge
+highlighter: rouge
 # show_excerpts: true
-# permalink: /:year/:month/:day/:title/
+permalink: /:year/:month/:day/:title/
 # plugins:
 #   - jekyll-feed
 
