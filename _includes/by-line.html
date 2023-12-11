@@ -10,13 +10,20 @@
       </div>
       {% if include.share, true %}
       <div class="col-sm-2 d-flex justify-content-end align-items-center">
+        {% assign shareSites = site.data.socialmedia | where: "supportsShare", true %}
+        {% if shareSites.size > 0 %}
         <b>Share:</b>
-        {% assign shareSites = site.data.socialmedia | where: "supportShare", true %}
         {% for sm in shareSites %}
-        <a class="link-secondary p-1" href="{{ sm.shareurl }}{{site.url | url_encode}}{{page.url | url_encode}}">
-            <i class="bi {{sm.iconclass}}"></i>
-        </a>
+          {% if sm.name == "linkedin" %}
+            <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+            <script type="IN/Share" data-url="{{site.url}}{{ page.url | relative_url }}"></script>
+          {% else %}
+            <a class="link-secondary p-1" href="{{ sm.shareurl }}{{site.url | url_encode}}{{page.url | url_encode}}">
+              <i class="bi {{sm.iconclass}}"></i>
+            </a>
+          {% endif %}
         {% endfor %}
+        {% endif %}
       </div>
       {% endif %}
   </div>
