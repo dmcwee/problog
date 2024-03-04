@@ -25,15 +25,16 @@ url: "https://davidmcwee.com" # the base hostname & protocol for your site, e.g.
 google_analytics: ""
 bs-theme: "light"
 nav-bs-theme: "dark"
+bs-codetheme: "dark"
 image: ""
 
 # Build settings
-markdown: kramdown
-highlighter: rouge
-# show_excerpts: true
 permalink: /:year/:month/:day/:title/
-# plugins:
-#   - jekyll-feed
+# highlighter: rouge
+markdown: kramdown
+kramdown:
+  highlighter: rouge
+
 
 defaults:
 - 
