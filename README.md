@@ -1,3 +1,7 @@
+---
+layout: page
+title: Problog Readme
+---
 # ProBlog
 
 **ProBlog** is a GitHub pages compatible Jekyll site theme I created and use on my [personal blog](https://davidmcwee.com). Many of the features have been developed over time as I need/want new abilities or displays. **ProBlog** uses [BootStrap](https://getbootstrap.com/) for a responsive design, specialized icons, and site color modes to make branding easier and consistent. 

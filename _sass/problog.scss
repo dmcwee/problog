@@ -11,18 +11,22 @@
 
     &-featured {
         .card {
-                padding-left: 0 !important;
-                padding-right: 0 !important;
+            &-body {
+                max-height: 250px;
+                overflow-y: hidden;
+            }
 
-                &-body {
-                    max-height: 250px;
-                    overflow-y: hidden;
-                }
+            &-text {
+                max-height:250px;
+                overflow-y: hidden;
+            }
         }
     }
 
-    &-header-outer {
-        background-color: var(--bs-body-bg);
+    &-header {
+        &-outer {
+            background-color: var(--bs-body-bg);
+        }
     }
 
     &-main {
@@ -31,10 +35,23 @@
 
     &-post {
         &-header {
-            &-image {
-                background-repeat: no-repeat;
-                min-height: 250px; 
+            // &-image {
+            //     background-repeat: no-repeat;
+            //     min-height: 250px; 
+            //     background-position: 0px -150px;
+            // }
+
+            .card {
                 background-position: 0px -150px;
+                border: none !important;
+            }
+
+            .text-bg-light {
+                background-color: rgba($color: #ffffff, $alpha: 0.8) !important;
+            }
+
+            .text-bg-dark {
+                background-color: rgba($color: #555555, $alpha: 0.8) !important;
             }
         }
 

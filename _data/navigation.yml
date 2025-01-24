@@ -4,7 +4,7 @@
 # Only one level of navigation is supported currently.
 
 - name: Page
-  link: /page.html
+  link: /page
   relative: true
 - name: Post 1
   link: /2023/01/01/example-post-light

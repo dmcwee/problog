@@ -35,6 +35,11 @@ markdown: kramdown
 kramdown:
   highlighter: rouge
 
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+
+paginate: 2
 
 defaults:
 - 

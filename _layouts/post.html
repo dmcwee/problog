@@ -2,26 +2,34 @@
 layout: default
 ---
 
-{% if page.banner %}
-{% assign class = "blog-post-header-image" %}
-{% endif %}
-<div class="row blog-post-header {{ class }}" style="background-image: url('{{ page.banner | relative_url  }}');" >
-    <div class="col mt-3" data-bs-theme="{{ page.title-bs-theme }}">
-        <h1 class="blog-post-title">{{ page.title }}</h1>
+<div class="blog-post-header container mb-2">
+    <div class="row">
+        <div class="col">
+            <div class="card text-bg-{{ page.theme }}" style="background-image: url('{{ page.banner | relative_url  }}');">
+                <div class="card-body">
+                    <h1 class="card-title" style="bg">{{ page.title }}</h1>
+                    <h5 class="card-subtitle">
+                        {{ page.date | date: "%a %b %d, %y" }}
+                        {% if post.last_update %}
+                        | <span class="blog-by-line-update">Updated: {{ page.last_update | date: "%a %b %d, %y"}} </span>
+                        {% endif %}</h5>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-{%- include by-line.html post=page share=true -%}
+<div class="container">
+    <div class="row blog-body">
+        <article class="col blog-content">
+            {{ content }}
+        </article>
 
-<div class="row blog-body">
-    <article class="col blog-content">
-        {{ content }}
-    </article>
-
-    {% if page.series %}
-    <div class="col-3">
-        <div class="position-sticky blog-sidebar">
-        {% include series.html %}
+        {% if page.series %}
+        <div class="col-3">
+            <div class="position-sticky blog-sidebar">
+            {% include series.html %}
+        </div>
+        {% endif %}
     </div>
-    {% endif %}
 </div>

@@ -63,3 +63,15 @@ aliquet nunc, vel tincidunt nulla magna vel mauris. Donec euismod, quam eget bib
   newHtml += iHtml;
   $("#div_id_1").html(newHtml);
 ```
+or
+
+```yaml
+install_prereqs:
+  pkg.installed:
+    - pkgs:
+      - curl
+      - libplist-utils
+      - gpg
+      - gnupg
+      - apt-transport-https
+```
