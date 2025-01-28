@@ -23,6 +23,8 @@ baseurl: "/problog" # the subpath of your site, e.g. /blog
 domain: ""
 url: "https://davidmcwee.com" # the base hostname & protocol for your site, e.g. http://example.com
 google_analytics: ""
+google_search_key: ""
+google_search_id: ""
 bs-theme: "light"
 nav-bs-theme: "dark"
 bs-codetheme: "dark"

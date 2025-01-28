@@ -1,0 +1,70 @@
+---
+layout: page
+---
+<script type="text/javascript">
+function formatResults(results) {
+    var template = $("#search-display").html();
+    var templateScript = Handlebars.compile(template);
+    var html = templateScript(results);
+
+    $("#results").html(html);
+}
+</script>
+
+<div class="container">
+    <form id="search" onsubmit="search('{{ site.google_search_key }}','{{ site.google_search_id }}', 'searchBox', formatResults); return false;">
+        <input type="text" placeholder="search..." id="searchBox" />
+        <button type="submit" id="searchBtn">Search</button>
+    </form>
+    <div class="row">
+        <div id="results" class="col">results show here...</div>
+    </div>
+</div>
+
+{% raw %}
+<script type="text/x-handlebars-template" id="search-display">
+    <div class="modal" id="modal" style="display:contents;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="blog-heading p-2 modal-title" data-bs-theme="dark">Search Results</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close Search Results" onclick="$('#modal').hide();"></button>
+            </div>
+            <div class="modal-body">
+                {{#each items}}
+                <div class="card">
+                    <div class="row">
+                        {{#if pagemap.metatags.length }}
+                        <div class="col-2">
+                            <img src="{{resultImage pagemap.metatags }}" alt="{{resultImageAlt pagemap.metatags }}" class="img-fluid rounded-start with-footer" />
+                        </div>
+                        {{/if }}
+                        <div class="col">
+                            <div class="card-body">
+                                <div class="card-title"><a href="{{link}}" class="link-secondary">{{title}}</a></div>
+                                <div class="card-text">{{snippet}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+
+</script>
+{% endraw %}
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous"></script>
+<script type="text/javascript" src="{{ 'assets/js/search.js' | relative_url }}"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        Handlebars.registerHelper('resultImage', function(array) {
+            return array && array.length ? array[0]["twitter:image"] : "../assets/images/jekyll_featured_theme.jpg";
+        });
+
+        Handlebars.registerHelper('resultImageAlt', function(array) {
+            return array && array.length ? array[0]["twitter:image:alt"] : "Alt Text";
+        });
+    });
+</script>

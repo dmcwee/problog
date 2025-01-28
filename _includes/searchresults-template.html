@@ -1,0 +1,31 @@
+{% raw %}
+<script type="text/x-handlebars-template" id="searchresults-template">
+    <div class="modal" style="display:contents;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title" data-bs-theme="dark">Search Results</h1>
+                <button type="button" class="btn-close" aria-label="Close Search Results" onclick="closeResults();"></button>
+            </div>
+            <div class="modal-body">
+                {{#each items}}
+                <div class="card">
+                    <div class="row">
+                        {{#if pagemap.metatags.length }}
+                        <div class="col-2">
+                            <img src="{{getImageUrl pagemap.metatags }}" alt="{{getImageAlt pagemap.metatags }}" class="img-fluid rounded-start with-footer" />
+                        </div>
+                        {{/if }}
+                        <div class="col">
+                            <div class="card-body">
+                                <div class="card-title"><a href="{{link}}" class="link-secondary">{{title}}</a></div>
+                                <div class="card-text">{{snippet}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</script>
+{% endraw %}
