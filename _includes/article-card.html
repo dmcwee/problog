@@ -1,0 +1,27 @@
+<div class="card mb-3">
+<div class="row g-0">
+    {% if include.post.image %}
+    <div class="col-2">
+    <img src="{{ include.post.image | relative_url }}" class="img-fluid rounded-start with-footer" alt="Image for Post {{ include.post.title }}">
+    </div>
+    {% endif %}
+    <div class="col">
+    <div class="card-body">
+        <h5 class="card-title"><a href="{{ include.post.url | relative_url }}" class="link-secondary">{{ include.post.title }}</a></h5>
+        <p class="card-text" style="overflow-y:hidden;">{{ include.post.excerpt | strip_html }}</p>
+    </div>
+    </div>
+</div>
+<div class="row g-0">
+    <div class="col card-footer">
+    <h6 class="card-subtitle">
+        {{ include.post.date | date: "%b %d, %y"}}
+        {% for category in include.post.categories %}
+        {% capture catUrl %}/categories/{{category | downcase}}{% endcapture %}
+        | <a class="link-secondary" href="{{ catUrl | relative_url }}">{{ category }}</a>
+        {% endfor %}
+        | <a href="{{ include.post.url | relative_url }}" class="link-secondary">Read more...</a>
+    </h6>
+    </div>
+</div>
+</div>
