@@ -1,24 +1,17 @@
 ---
 layout: default
 ---
-
-<div class="blog-post-header container mb-2">
-    <div class="row">
-        <div class="col">
-            <div class="card text-bg-{{ page.theme }}" style="background-image: url('{{ page.banner | relative_url  }}');">
-                <div class="card-body">
-                    <h1 class="card-title" style="bg">{{ page.title }}</h1>
-                    <h5 class="card-subtitle">
-                        {{ page.date | date: "%a %b %d, %y" }}
-                        {% if post.last_update %}
-                        | <span class="blog-by-line-update">Updated: {{ page.last_update | date: "%a %b %d, %y"}} </span>
-                        {% endif %}</h5>
-                </div>
-            </div>
-        </div>
+<div class="row overflow-hidden text-center blog-post-header" style="background-image: url('{{ page.banner | relative_url  }}'); background-size: cover;">
+    <div class="col-8 p-5 mx-auto my-5 text-bg-{{ page.theme }}">
+        <h1 class="display-3 fw-bold">{{ page.title }}</h1>
+        <h3 class="fw-normal text-muted mb-3">
+            {{ page.date | date: "%a %b %d, %y" }}
+            {% if post.last_update %}
+            | <span class="blog-by-line-update">Updated: {{ page.last_update | date: "%a %b %d, %y"}} </span>
+            {% endif %}
+        </h3>
     </div>
 </div>
-
 <div class="container">
     <div class="row blog-body">
         <article class="col blog-content">
