@@ -3,6 +3,8 @@ name: Create Release on Tag
 on:
   push:
     tags:
+      - 'd*'
+      - 'p*'
       - 'v*'
 
 jobs:
@@ -23,5 +25,5 @@ jobs:
         with:
           tag_name: ${{ github.ref_name }}
           release_name: ${{ github.ref_name }}
-          draft: true
-          prerelease: true
+          draft: ${{ startsWith(github.ref_name, 'd') }}
+          prerelease: ${{ startsWith(github.ref_name, 'd') || startsWith(github.ref_name, 'p') }}
