@@ -5,10 +5,10 @@
       | <span class="blog-by-line-update">Updated: {{ include.post.last_update | date: "%a %b %d, %y"}} </span>
       {% endif %}
       {% for category in include.post.categories %}
-      | <a class="link-secondary" href="/categories/{{ category }}">{{ category }}</a>
+      | <a class="link-secondary" href="{{ '/categories/' | append: category | relative_url }}">{{ category }}</a>
       {% endfor %}
       </div>
-      {% if include.share, true %}
+      {% if include.share %}
       <div class="col-sm-2 d-flex justify-content-end align-items-center">
         {% assign shareSites = site.data.socialmedia | where: "supportsShare", true %}
         {% if shareSites.size > 0 %}

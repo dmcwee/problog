@@ -6,7 +6,7 @@ layout: default
         <h1 class="display-3 fw-bold">{{ page.title }}</h1>
         <h3 class="fw-normal text-muted mb-3">
             {{ page.date | date: "%a %b %d, %y" }}
-            {% if post.last_update %}
+            {% if page.last_update %}
             | <span class="blog-by-line-update">Updated: {{ page.last_update | date: "%a %b %d, %y"}} </span>
             {% endif %}
         </h3>
@@ -22,6 +22,7 @@ layout: default
         <div class="col-3">
             <div class="position-sticky blog-sidebar">
             {% include series.html %}
+            </div>
         </div>
         {% endif %}
     </div>

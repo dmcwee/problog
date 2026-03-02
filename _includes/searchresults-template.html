@@ -1,5 +1,4 @@
-{% raw %}
-<script type="text/x-handlebars-template" id="searchresults-template">
+<div id="searchresults" class="container-fluid blog-searchresults d-none" data-bs-theme="{{ site.bs-theme}}">
     <div class="modal" style="display:contents;">
         <div class="modal-content">
             <div class="modal-header">
@@ -7,25 +6,24 @@
                 <button type="button" class="btn-close" aria-label="Close Search Results" onclick="closeResults();"></button>
             </div>
             <div class="modal-body">
-                {{#each items}}
-                <div class="card">
-                    <div class="row">
-                        {{#if pagemap.metatags.length }}
-                        <div class="col-2">
-                            <img src="{{getImageUrl pagemap.metatags }}" alt="{{getImageAlt pagemap.metatags }}" class="img-fluid rounded-start with-footer" />
-                        </div>
-                        {{/if }}
-                        <div class="col">
-                            <div class="card-body">
-                                <div class="card-title"><a href="{{link}}" class="link-secondary">{{title}}</a></div>
-                                <div class="card-text">{{snippet}}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {{/each}}
             </div>
         </div>
     </div>
-</script>
-{% endraw %}
+
+    <template id="searchresults-template">
+        <div class="card">
+            <div class="row">
+                <div class="col-2" data-field="image-col">
+                    <img src="" alt="" class="img-fluid rounded-start with-footer" />
+                </div>
+                <div class="col">
+                    <div class="card-body">
+                        <div class="card-title"><a href="#" data-field="link" class="link-secondary"></a></div>
+                        <div class="card-text" data-field="snippet"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</div>
+

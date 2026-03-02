@@ -4,5 +4,5 @@
     {%- include article.html post=post hideSummary=false -%}
   {% endfor %}
 
-  <a href="/categories/all" class="link-secondary">All Posts...</a>
+  <a href="{{ '/categories/all' | relative_url }}" class="link-secondary">All Posts...</a>
 </div>

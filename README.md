@@ -32,6 +32,25 @@ Or install it yourself as:
 
 The **ProBlog** theme has a number of customization and specialization features that can be set at the Site or Page level.
 
+### Example _config.yml
+
+This is an starter _config.yml file for use with the template.
+
+```yml
+remote_theme: dmcwee/problog
+plugins:
+  - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-paginate
+bs-theme: "light"  # or "dark"
+nav-bs-theme: "dark"
+bs-codetheme: "dark"
+paginate: 5
+google_analytics: "your-google-analytics-key-here"
+google_search_key: your-google-search-key-here
+google_search_id: your-google-searck-id-here
+```
+
 ### Data
 
 The theme uses `_data` yml file to control the site navigation and social media links. Icons for the social media sites are pulled from the BootStrap Icons using the Icon Font for rendering.

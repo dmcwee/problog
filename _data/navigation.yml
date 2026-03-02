@@ -4,7 +4,7 @@
 # Only one level of navigation is supported currently.
 
 - name: Page
-  link: /page
+  link: /example/page/
   relative: true
 - name: Post 1
   link: /2023/01/01/example-post-light
@@ -12,10 +12,12 @@
 - name: Post 2
   link: /2023/01/02/example-post-dark
   relative: true
-- name: Data 2
-  link: #
-- name: Data 3
-  link: #
+- name: Search
+  link: /example/search/
+  relative: true
+- name: Playground
+  link: /example/playground/
+  relative: true
 - name: About
   link: /about
   relative: true

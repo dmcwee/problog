@@ -1,0 +1,30 @@
+---
+layout: page
+---
+<script type="text/javascript">
+function formatResults(results) {
+    var container = document.getElementById('results');
+    container.innerHTML = '';
+
+    if (results.items) {
+        results.items.forEach(function(item) {
+            container.appendChild(renderResultItem(item));
+        });
+    }
+}
+</script>
+
+<div class="container">
+    <form id="search" onsubmit="search('{{ site.google_search_key }}','{{ site.google_search_id }}', 'searchBox', formatResults); return false;">
+        <input type="text" placeholder="search..." id="searchBox" />
+        <button type="submit" id="searchBtn">Search</button>
+    </form>
+    <div class="row">
+        <div id="results" class="col">results show here...</div>
+    </div>
+</div>
+
+<div class="container">
+    <script async src="https://cse.google.com/cse.js?cx=4640ce7d412a64b3a"></script>
+    <div class="gcse-search"></div>
+</div>
