@@ -15,30 +15,40 @@
 # in the templates via {{ site.myvariable }}.
 
 title: ProBlog Jekyll Theme
-email: dmcwee@microsoft.com
+email: ""
 description: >- # this means to ignore newlines until "baseurl:"
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sapien vel bibendum bibendum, velit sapien aliquet nunc, 
   vel tincidunt nulla magna vel mauris. 
-baseurl: "/problog" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 domain: ""
-url: "https://davidmcwee.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Google analytics setting
 google_analytics: ""
+
+# Google Search JSON API setting (Deprecated by Google, but still available for existing users)
 google_search_key: ""
 google_search_id: ""
+
+# Google Vertex AI Search setting (Requires Google Cloud account, Project, AI Application, and API key)
 google_vertex_appid: ""
 google_vertex_projectid: ""
 google_vertex_apikey: ""
+
+# Bootstrap Theme setting exposure
 bs-theme: "light"
 nav-bs-theme: "dark"
 bs-codetheme: "dark"
+
+# Default image use with SEO and social media sharing. You can set it to a default image URL or leave it empty to use the first image in the post.
 image: ""
 
 # Build settings
-permalink: /:year/:month/:day/:title/
+# permalink: /:year/:month/:day/:title/
 # highlighter: rouge
-markdown: kramdown
-kramdown:
-  highlighter: rouge
+# markdown: kramdown
+# kramdown:
+#   highlighter: rouge
 
 plugins:
   - jekyll-feed
@@ -64,12 +74,8 @@ defaults:
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-exclude:
-  - problog.gemspec
-  - LICENSE.txt
-  - Gemfile
-  - Gemfile.lock
-#- categories
+# exclude:
+#  - categories
 #  - _posts/drafts
 #  - _posts/archive
 #  - *.draft.*
