@@ -18,6 +18,14 @@
 - name: Playground
   link: /example/playground/
   relative: true
+- name: Menu
+  dropdown:
+    - name: Subpage 1
+      link: /example/subpage1/
+      relative: true
+    - name: Subpage 2
+      link: /example/subpage2/
+      relative: true
 - name: About
   link: /about
   relative: true

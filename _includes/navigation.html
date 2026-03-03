@@ -19,16 +19,42 @@
             <div class="collapse navbar-collapse" id="blognavbar">
                 <div class="blog-navbar-nav navbar-nav col justify-content-between">
                     {% for navlink in site.data.navigation %}
+                    {% if navlink.dropdown %}
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ navlink.name }}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {% for sublink in navlink.dropdown %}
+                            {% if sublink.relative %}
+                            <li><a class="dropdown-item" href="{{ sublink.link | relative_url }}">{{ sublink.name }}</a></li>
+                            {% else %}
+                            <li><a class="dropdown-item" href="{{ sublink.link }}">{{ sublink.name }}</a></li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% else %}
                     {% if navlink.relative %}
                     <a class="nav-item nav-link" href="{{ navlink.link  | relative_url}}">{{ navlink.name }}</a>
                     {% else %}
                     <a class="nav-item nav-link" href="{{ navlink.link }}">{{ navlink.name }}</a>
                     {% endif %}
+                    {% endif %}
                     {% endfor %}
+
                     {% if site.google_search_key != "" and site.google_search_id != "" %}
                     <div class="nav-item">
                         <form class="nav-item d-flex input-group" role="search"
                         onsubmit="search('{{ site.google_search_key }}','{{ site.google_search_id }}', 'searchterm'); return false;">
+                            <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="searchterm"/>
+                            <button class="btn btn-outline-secondary link-secondary" type="submit"><i class="bi bi-search"></i></button>
+                        </form>
+                    </div>
+                    {% elsif site.google_vertex_appid != "" and site.google_vertex_projectid != "" and site.google_vertex_apikey != "" %}
+                    <div class="nav-item">
+                        <form class="nav-item d-flex input-group" role="search"
+                        onsubmit="search('{{ site.google_vertex_projectid }}','{{ site.google_vertex_apikey }}','{{ site.google_vertex_appid }}', 'searchterm'); return false;">
                             <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="searchterm"/>
                             <button class="btn btn-outline-secondary link-secondary" type="submit"><i class="bi bi-search"></i></button>
                         </form>
