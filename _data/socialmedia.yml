@@ -1,0 +1,35 @@
+# This file stores the Social media links and sharing information used across the site.
+# By adding/removing items they will be added or removed to the site's top banner. Including a
+# shareurl and settings supportShare to true will cause the sharing link to be added
+# to the 'by line' on posts.
+#
+# 11 Dec 2023 - LinkedIn has done something with their share process that causes the url to 
+#               not work properly. In order to fix this the LinkedIn Share Object has been added 
+#               to the by-line file and the shareurl here is ignored.
+
+- name: linkedin
+  username: linkedin
+  iconclass: bi-linkedin
+  url: "#"
+  supportsShare: true
+  shareurl: "https://www.linkedin.com/sharing/share-offsite/?url="
+- name: github
+  username: github
+  iconclass: bi-github
+  url: "#"
+- name: mastodon
+  username: mastodon@mastodon.exchange
+  iconclass: bi-mastodon
+  supportsShare: false
+  url: "https://infosec.exchange/@mastodon"
+- name: threads
+  username: threads
+  iconclass: bi-threads-fill
+  supportsShare: false
+  url: "https://www.threads.net/@threads"
+- name: twitter
+  username: twitter
+  iconclass: bi-twitter
+  url: "https://twitter.com/twitter"
+  supportsShare: false
+  shareurl: "https://twitter.com/intent/tweet?url="

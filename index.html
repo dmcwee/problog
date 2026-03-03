@@ -1,0 +1,54 @@
+---
+layout: page
+---
+{% assign featuredPost = site.posts | where: "featured", "true" %}
+{%- include featured.html featuredPosts=featuredPost maxPosts=4 -%}
+
+<div class="container">
+    <h1>Pagination</h1>
+    {% for post in paginator.posts %}
+    <div class="card mb-3">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{{ post.image | relative_url }}" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <h6 class="card-subtitle">
+                        {{ post.date | date: "%b %d, %y"}}
+                        {% for category in post.categories %}
+                        {% capture catUrl %}/categories/{{category | downcase}}{% endcapture %}
+                        | <a class="link-secondary" href="{{ catUrl | relative_url }}">{{ category }}</a>
+                        {% endfor %}
+                    </h6>
+                    <p class="card-text" style="overflow-y:hidden;">{{ post.excerpt | strip_html  }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row g-0">
+            <div class="col card-footer">
+                <a href="{{ post.url | relative_url }}" class="link-secondary">Read more...</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <div class="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path | relative_url }}" class="previous">
+        Previous
+      </a>
+    {% else %}
+      <span class="previous">Previous</span>
+    {% endif %}
+    <span class="page_number ">
+      Page: {{ paginator.page }} of {{ paginator.total_pages }}
+    </span>
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | relative_url }}" class="next">Next</a>
+    {% else %}
+      <span class="next ">Next</span>
+    {% endif %}
+  </div>
+</div>

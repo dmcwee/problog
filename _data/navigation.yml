@@ -1,0 +1,34 @@
+# This file stores the navigation text and links for the site. These items are used to
+# create the navigation links in the site's banner.
+#
+# Only one level of navigation is supported currently.
+
+- name: Page
+  link: /example/page/
+  relative: true
+- name: Post 1
+  link: /2023/01/01/example-post-light
+  relative: true
+- name: Post 2
+  link: /2023/01/02/example-post-dark
+  relative: true
+- name: Search
+  link: /example/search/
+  relative: true
+- name: Playground
+  link: /example/playground/
+  relative: true
+- name: Menu
+  dropdown:
+    - name: Subpage 1
+      link: /example/subpage1/
+      relative: true
+    - name: Subpage 2
+      link: /example/subpage2/
+      relative: true
+- name: About
+  link: /about
+  relative: true
+- name: README
+  link: /README
+  relative: true
