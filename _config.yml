@@ -33,7 +33,7 @@ nav-bs-theme: "dark"
 bs-codetheme: "dark"
 image: ""
 
-remote_theme: dmcwee/problog@p0.1.7 
+remote_theme: dmcwee/problog
 
 # Build settings
 permalink: /:year/:month/:day/:title/
