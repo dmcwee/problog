@@ -37,10 +37,6 @@ remote_theme: dmcwee/problog
 
 # Build settings
 permalink: /:year/:month/:day/:title/
-# highlighter: rouge
-# markdown: kramdown
-# kramdown:
-#   highlighter: rouge
 
 plugins:
   - jekyll-feed
